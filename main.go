@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bytes"
 	"fmt"
 	"math/rand"
 	"strings"
@@ -16,7 +17,7 @@ var tests = []string{
 
 func main() {
 	src := []string{"ドド", "スコ"}
-	sb := &strings.Builder{}
+	buf := &bytes.Buffer{}
 	rand.Seed(time.Now().UnixNano())
 
 	var (
@@ -29,10 +30,10 @@ func main() {
 		}
 
 		s := src[rand.Intn(2)]
-		sb.WriteString(s)
+		buf.WriteString(s)
 		fmt.Print(s)
-		if pass, dodosuko := dodosukoTest(sb.String()); !pass {
-			sb.Reset()
+		if pass, dodosuko := dodosukoTest(buf.String()); !pass {
+			buf.Reset()
 			numDodosuko = 0
 			fmt.Println("")
 		} else if dodosuko {
@@ -41,7 +42,7 @@ func main() {
 				fmt.Println("ラブ注入❤")
 				return
 			}
-			sb.Reset()
+			buf.Reset()
 		}
 		i++
 	}
