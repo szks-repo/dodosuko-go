@@ -24,7 +24,7 @@ func main() {
 		numDodosuko = 0
 	)
 	for {
-		if i == 100000000 {
+		if i == 1000000000 {
 			break
 		}
 
@@ -39,7 +39,7 @@ func main() {
 			numDodosuko++
 			if numDodosuko == 3 {
 				fmt.Println("ラブ注入❤")
-				break
+				return
 			}
 			sb.Reset()
 		}
