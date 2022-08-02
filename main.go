@@ -20,15 +20,9 @@ func main() {
 	buf := &bytes.Buffer{}
 	rand.Seed(time.Now().UnixNano())
 
-	var (
-		i           = 0
-		numDodosuko = 0
-	)
-	for {
-		if i == 1000000000 {
-			break
-		}
+	var numDodosuko int
 
+	for {
 		s := src[rand.Intn(2)]
 		buf.WriteString(s)
 		fmt.Print(s)
@@ -44,7 +38,6 @@ func main() {
 			}
 			buf.Reset()
 		}
-		i++
 	}
 }
 
