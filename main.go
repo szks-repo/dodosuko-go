@@ -36,12 +36,12 @@ func main() {
 			numDodosuko = 0
 			fmt.Println("")
 		} else if dodosuko {
-			sb.Reset()
 			numDodosuko++
 			if numDodosuko == 3 {
 				fmt.Println("ラブ注入❤")
 				break
 			}
+			sb.Reset()
 		}
 		i++
 	}
