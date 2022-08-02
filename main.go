@@ -21,7 +21,6 @@ func main() {
 	rand.Seed(time.Now().UnixNano())
 
 	var numDodosuko int
-
 	for {
 		s := src[rand.Intn(2)]
 		buf.WriteString(s)
@@ -47,7 +46,7 @@ func dodosukoTest(s string) (bool, bool) {
 			return false, false
 		}
 		if s == tests[i] {
-			if i != 3 {
+			if i != len(tests)-1 {
 				break
 			}
 			return true, true
